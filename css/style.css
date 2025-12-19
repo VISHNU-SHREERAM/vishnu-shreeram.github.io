@@ -190,6 +190,244 @@
 }
 
 /*======================================
+//--//-->   RESEARCH LANDSCAPE SECTION
+======================================*/
+
+.research-landscape-section {
+  background: linear-gradient(135deg, #fafafa 0%, #f0f0ff 100%);
+  padding: 60px 0 80px;
+  overflow: hidden;
+}
+
+.research-landscape-section .subtitle-a {
+  color: #666;
+  font-size: 1rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Orbit Container */
+.orbit-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-width: 1000px;
+  margin: 20px auto 0;
+}
+
+#orbit-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Node - Me */
+.center-node {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #090088 0%, #4a3aaa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 0 6px rgba(9, 0, 136, 0.15), 
+              0 0 40px rgba(9, 0, 136, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.center-node:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 10px rgba(9, 0, 136, 0.2), 
+              0 0 60px rgba(9, 0, 136, 0.35);
+}
+
+.center-node .center-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+/* Primary Orbit Nodes - LARGER */
+.primary-node {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff 0%, #f8f4ff 100%);
+  border: 3px solid #e3c5ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  z-index: 5;
+}
+
+.primary-node i {
+  font-size: 1.8rem;
+  color: #090088;
+  margin-bottom: 5px;
+}
+
+.primary-node .node-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 8px;
+}
+
+.primary-node:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 35px rgba(9, 0, 136, 0.25);
+  border-color: #090088;
+}
+
+/* Satellite Nodes - LARGER & READABLE */
+.satellite-node {
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.satellite-node span {
+  display: block;
+  background: linear-gradient(135deg, #fff 0%, #f0ebff 100%);
+  color: #1e1e1e;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e3c5ff;
+  transition: all 0.3s ease;
+}
+
+.satellite-node:hover {
+  transform: scale(1.1);
+}
+
+.satellite-node:hover span {
+  background: linear-gradient(135deg, #090088 0%, #4a3aaa 100%);
+  color: #fff;
+  border-color: #090088;
+  box-shadow: 0 6px 20px rgba(9, 0, 136, 0.3);
+}
+
+/* Orbit Tooltip */
+.orbit-tooltip {
+  position: absolute;
+  z-index: 1000;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(147, 112, 219, 0.4);
+  pointer-events: none;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.orbit-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #2d2d44;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .orbit-container {
+    height: 550px;
+  }
+  
+  .primary-node {
+    width: 95px;
+    height: 95px;
+  }
+  
+  .primary-node i {
+    font-size: 1.5rem;
+  }
+  
+  .primary-node .node-label {
+    font-size: 0.75rem;
+  }
+  
+  .satellite-node span {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .orbit-container {
+    height: auto;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  
+  #orbit-canvas {
+    display: none;
+  }
+  
+  .center-node,
+  .primary-node,
+  .satellite-node {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  
+  .center-node {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .center-node .center-img {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .primary-node {
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+  }
+  
+  .satellite-node {
+    margin: 5px;
+  }
+}
+
+/*======================================
 //--//-->   NEWS SECTION
 ======================================*/
 
@@ -2046,5 +2284,151 @@ footer .credits a {
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
+  }
+}
+
+/* ======= Coursework Grid ======= */
+.coursework-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.course-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.course-item i {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.course-item span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Category Colors */
+.course-item.course-math {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f5f7ff 0%, #eef1ff 100%);
+}
+.course-item.course-math i {
+  color: #667eea;
+}
+.course-item.course-math:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+}
+.course-item.course-math:hover i,
+.course-item.course-math:hover span {
+  color: #fff;
+}
+
+.course-item.course-cs {
+  border-color: #11998e;
+  background: linear-gradient(135deg, #f0fffe 0%, #e6fcfa 100%);
+}
+.course-item.course-cs i {
+  color: #11998e;
+}
+.course-item.course-cs:hover {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  border-color: #11998e;
+}
+.course-item.course-cs:hover i,
+.course-item.course-cs:hover span {
+  color: #fff;
+}
+
+.course-item.course-ai {
+  border-color: #f093fb;
+  background: linear-gradient(135deg, #fef5ff 0%, #fcf0ff 100%);
+}
+.course-item.course-ai i {
+  color: #c471ed;
+}
+.course-item.course-ai:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-color: #f093fb;
+}
+.course-item.course-ai:hover i,
+.course-item.course-ai:hover span {
+  color: #fff;
+}
+
+.course-item.course-data {
+  border-color: #ff9a56;
+  background: linear-gradient(135deg, #fff8f5 0%, #fff3ee 100%);
+}
+.course-item.course-data i {
+  color: #ff9a56;
+}
+.course-item.course-data:hover {
+  background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+  border-color: #ff9a56;
+}
+.course-item.course-data:hover i,
+.course-item.course-data:hover span {
+  color: #fff;
+}
+
+.course-item.course-ops {
+  border-color: #4facfe;
+  background: linear-gradient(135deg, #f5faff 0%, #eef7ff 100%);
+}
+.course-item.course-ops i {
+  color: #4facfe;
+}
+.course-item.course-ops:hover {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-color: #4facfe;
+}
+.course-item.course-ops:hover i,
+.course-item.course-ops:hover span {
+  color: #fff;
+}
+
+.course-item.course-other {
+  border-color: #6c757d;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+}
+.course-item.course-other i {
+  color: #6c757d;
+}
+.course-item.course-other:hover {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  border-color: #6c757d;
+}
+.course-item.course-other:hover i,
+.course-item.course-other:hover span {
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .course-item {
+    padding: 10px 16px;
+  }
+  .course-item span {
+    font-size: 0.85rem;
   }
 }
