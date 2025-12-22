@@ -116,7 +116,7 @@
         <div class="col-md-6">
           <div class="project-box-detailed">
             <div class="project-header">
-              <h3 class="project-title">Probabilistic Circuits - Hybrid Training</h3>
+              <h3 class="project-title">Probabilistic Circuits - Generalisation and Faster Training</h3>
               <span class="project-date">May 2025 - July 2025</span>
             </div>
             <div class="project-badges">
@@ -127,8 +127,8 @@
               <p>Research on Tractable Sharpness-Aware Learning of Probabilistic Circuits at Laboratory of Statistical Artificial Intelligence and Machine Learning, IIT Palakkad.</p>
               <ul>
                 <li>Collaborated on hybrid training method for PCs - more generalizable than EM, faster than SGD</li>
-                <li>Implemented Hessian-based regularizer to reduce overfitting</li>
-                <li>Proved Hessian trace is efficiently computable for PCs</li>
+                <li>Implemented <strong>Hessian-based regularizer </strong> to reduce overfitting</li>
+                <li>Efficient computation of Hessian trace for PCs</li>
               </ul>
             </div>
             <div class="project-tech">
@@ -163,7 +163,7 @@
             <div class="project-description">
               <p>An AI assistant handling chat and voice queries that intelligently invokes tools.</p>
               <ul>
-                <li>Supports 15+ actions (computer control, real-time weather, web search)</li>
+                <li>Supports 15+ actions (computer control, real-time weather, web search,etc.)</li>
                 <li>Uses Whisper for speech recognition and TTS for voice output</li>
                 <li>Modular SaaS architecture with containerized MCP-based tool servers</li>
                 <li>Tool routing via LangChain/Ollama, result tracking via MLflow</li>
@@ -195,6 +195,7 @@
                 <li>Uses BLIP for image captioning and Tantivy for indexing</li>
                 <li>Deployed dual backends (FastAPI/BentoML)</li>
                 <li>Load-tested for 1000+ concurrent requests using Locust</li>
+                <li>Ensured clean, configurable microservices with unified logging, ruff, and TOML/YAML config management.</li>
               </ul>
             </div>
             <div class="project-tech">
@@ -206,29 +207,159 @@
             </div>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="project-box-detailed">
+            <div class="project-header">
+              <h3 class="project-title">Flow Matching Analysis: Path Scheduling & Image Denoising</h3>
+              <span class="project-date">2025</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-research">Research</span>
+              <span class="badge badge-ai">Generative AI</span>
+            </div>
+            <div class="project-description">
+              <ul>
+                <li>Conducted rigorous study on Optimal Transport (OT) versus Cosine and Polynomial path schedulers, analyzing their impact on vector field curvature and training stability</li>
+                <li>Developed custom visualization suite to render velocity fields and sample evolution on data distributions</li>
+                <li>Formulated image denoising as a generative flow problem, adapting pre-trained model to solve inverse tasks by manipulating integration time steps</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">Flow Matching</span>
+              <span class="tech-tag">Optimal Transport</span>
+            </div>
+          </div>
+        </div>
 
         <div class="col-md-6">
           <div class="project-box-detailed">
             <div class="project-header">
-              <h3 class="project-title">Emotional Speech Generator</h3>
+              <h3 class="project-title">VerdictVault AI: Legal Information Retrieval System</h3>
+              <span class="project-date">2025</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-ai">AI/LLM</span>
+              <span class="badge badge-ml">Information Retrieval</span>
+            </div>
+            <div class="project-description">
+              <ul>
+                <li>Engineered Hybrid Retrieval pipeline over 26,688 Supreme Court judgments, fusing BM25 lexical scoring with dense vector retrieval</li>
+                <li>Implemented dynamic thresholding algorithm using elbow detection on relative score drops to auto-truncate ranked lists</li>
+                <li>Developed RAG framework with Google Gemini for grounded legal answers, with LLM-based metadata extraction for year/bench filtering</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">ElasticSearch</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Gemini</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-box-detailed">
+            <div class="project-header">
+              <h3 class="project-title">Interventional Sum-Product Networks (iSPN) with GNNs</h3>
+              <span class="project-date">2025</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-research">Research</span>
+              <span class="badge badge-ai">Causal Inference</span>
+            </div>
+            <div class="project-description">
+              <ul>
+                <li>Extended "Interventional Sum-Product Networks" paper to model causal interventions using custom Graph Convolutional Network (GCN) to encode mutilated causal graphs</li>
+                <li>Integrated GCN encoder into iSPN framework to generate parameters for Sum-Product Networks, replacing standard MLPs</li>
+                <li>Achieved <strong>26.15% reduction</strong> in test NLL on <strong>ASIA dataset</strong> when compared to a mild improvement on <strong> Causal Toy dataset</strong>, demonstrating GNN superiority on sparse, large-scale causal graphs</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">GNN</span>
+              <span class="tech-tag">Causal Inference</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-box-detailed">
+            <div class="project-header">
+              <h3 class="project-title">Generating Emotionally Expressive Speech</h3>
               <span class="project-date">2025</span>
             </div>
             <div class="project-badges">
               <span class="badge badge-ai">NLP/Audio</span>
+              <!-- not completed badge -->
+               <span class="badge badge-wip">Work in Progress</span>
             </div>
             <div class="project-description">
-              <p>Converts neutral synthetic speech into emotionally expressive speech.</p>
               <ul>
-                <li>Inspired by textless speech-to-speech approaches</li>
-                <li>Curated unique emotion-annotated dataset from "Inside Out" movie</li>
-                <li>Used audio classifier to expand dataset from unlabeled clips</li>
-              </ul>
+              <li> Objective: Developing a textless speech-to-speech framework to convert neutral synthetic audio into emotion-rich speech (e.g., Joy, Sadness) for mental health and animation applications.</li>
+
+              <li>Data Curation: Addressed the critical scarcity of emotion-labeled datasets by curating a novel corpus from the movie Inside Out, leveraging character archetypes as proxies for emotional states.</li>
+<li>Semi-Supervised Pipeline: Engineered an automated annotation pipeline to resolve missing speaker tags; trained an audio classifier on seed data to iteratively label and expand the dataset using high-confidence predictions.</li>              </ul>
             </div>
             <div class="project-tech">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Librosa</span>
               <span class="tech-tag">Whisper</span>
               <span class="tech-tag">TorchAudio</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="project-box-detailed">
+            <div class="project-header">
+              <h3 class="project-title">CIF Database Management System</h3>
+              <span class="project-date">Feb 2024 - May 2024</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-db">Database</span>
+            </div>
+            <div class="project-description">
+              <p>Slot Booking DBMS for Central Instrumentation Facility at IIT Palakkad.</p>
+              <ul>
+                <li>Developed comprehensive system with 25+ triggers, functions & procedures</li>
+                <li>Role-based access for students, faculty, and staff</li>
+                <li>Collaborative team project with intuitive front-end</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="project-links">
+              <a href="https://cif.iitpkd.ac.in/" target="_blank" class="project-link"><i class="fa fa-external-link"></i> CIF Website</a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="project-box-detailed">
+            <div class="project-header">
+              <h3 class="project-title">Self-Supervised CT Denoising via Neighbor-to-Neighbor</h3>
+              <span class="project-date">2025</span>
+            </div>
+            <div class="project-badges">
+              <span class="badge badge-ai">Medical Imaging</span>
+              <span class="badge badge-ml">Deep Learning</span>
+            </div>
+            <div class="project-description">
+              <ul>
+                <li>Implemented self-supervised denoising pipeline for medical CT scans using Ne2Ne framework, training U-Net directly on noisy data without clean ground truth</li>
+                <li>Engineered physics-informed data generation workflow: projecting clean images into Sinograms (Radon Transform), injecting Poisson-Gaussian noise, and reconstructing to simulate authentic scanner artifacts</li>
+                <li>Leveraged Ne2Ne's random subsampling strategy to separate signal from noise, restoring diagnostic quality in low-dose CT DICOMs</li>
+              </ul>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">DICOM</span>
+              <span class="tech-tag">U-Net</span>
             </div>
           </div>
         </div>
@@ -257,7 +388,7 @@
               <span class="tech-tag">Vector DB</span>
             </div>
             <div class="project-links">
-              <a href="https://drive.google.com/file/d/1pxBLwQbRrFeFh5Tn1vjF4rYnVGS1n_l_/view?usp=drive_link" target="_blank" class="project-link"><i class="fa fa-file-pdf-o"></i> Report</a>
+              <a href="https://drive.google.com/file/d/1pxBLwQbRrFeFh5Tn1vjF4rYnVGS1n_l_/view?usp=drive_link" target="_blank" class="project-link"><i class="fa fa-file-pdf-o"></i> Demo</a>
             </div>
           </div>
         </div>
@@ -289,32 +420,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="project-box-detailed">
-            <div class="project-header">
-              <h3 class="project-title">CIF Database Management System</h3>
-              <span class="project-date">Feb 2024 - May 2024</span>
-            </div>
-            <div class="project-badges">
-              <span class="badge badge-db">Database</span>
-            </div>
-            <div class="project-description">
-              <p>Slot Booking DBMS for Central Instrumentation Facility at IIT Palakkad.</p>
-              <ul>
-                <li>Developed comprehensive system with 25+ triggers, functions & procedures</li>
-                <li>Role-based access for students, faculty, and staff</li>
-                <li>Collaborative team project with intuitive front-end</li>
-              </ul>
-            </div>
-            <div class="project-tech">
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Python</span>
-            </div>
-            <div class="project-links">
-              <a href="https://cif.iitpkd.ac.in/" target="_blank" class="project-link"><i class="fa fa-external-link"></i> CIF Website</a>
-            </div>
-          </div>
-        </div>
+
       </div>
 
     </div>
