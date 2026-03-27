@@ -744,6 +744,32 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
+  <!-- One-time auto-scroll to About Me after 2 seconds -->
+  <script>
+    if (!sessionStorage.getItem('autoScrolled')) {
+      sessionStorage.setItem('autoScrolled', 'true');
+      setTimeout(function () {
+        var aboutSection = document.getElementById('about');
+        if (!aboutSection) return;
+        var startY = window.scrollY || window.pageYOffset;
+        var targetY = aboutSection.getBoundingClientRect().top + startY;
+        var duration = 1800;
+        var startTime = null;
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var elapsed = timestamp - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          window.scrollTo(0, startY + (targetY - startY) * easeInOutCubic(progress));
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }, 2000);
+    }
+  </script>
+
 
 
   <!-- Cloudflare Web Analytics -->
